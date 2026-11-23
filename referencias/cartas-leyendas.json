@@ -1,0 +1,404 @@
+{
+ "_notes": "sides en orden N, NE, SE, S, SO, NO. power = suma de COST(lado) + costo del efecto. inSlice=false: efecto recortado, hay que reasignarle uno de la lista del slice conservando tier e historia.",
+ "cards": [
+  {
+   "id": "chigui",
+   "name": "Chigüi",
+   "element": "agua",
+   "sides": [
+    4,
+    3,
+    3,
+    4,
+    3,
+    3
+   ],
+   "effect": "manada",
+   "power": 24,
+   "tier": "comun",
+   "region": "Llanos Orientales",
+   "quote": "Nada lo estresa. Con amigos, menos.",
+   "whyEffect": "Siempre anda en grupo: Manada.",
+   "inspiredBy": "el chigüiro de los Llanos",
+   "inSlice": true
+  },
+  {
+   "id": "doradita",
+   "name": "Doradita",
+   "element": "monte",
+   "sides": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "effect": "espinas",
+   "power": 21,
+   "tier": "comun",
+   "region": "Chocó",
+   "quote": "Pequeñita, brillante y mejor no tocarla.",
+   "whyEffect": "Su piel castiga a quien la atrapa: Espinas.",
+   "inspiredBy": "la rana dorada del Chocó",
+   "inSlice": true
+  },
+  {
+   "id": "guaca",
+   "name": "Guaca",
+   "element": "fuego",
+   "sides": [
+    5,
+    4,
+    3,
+    2,
+    3,
+    4
+   ],
+   "effect": "embestida",
+   "power": 24,
+   "tier": "comun",
+   "region": "Toda Colombia",
+   "quote": "Grita antes de llegar y llega de frente.",
+   "whyEffect": "Se lanza sin pensarlo: Embestida.",
+   "inspiredBy": "la guacamaya bandera",
+   "inSlice": true
+  },
+  {
+   "id": "titin",
+   "name": "Titín",
+   "element": "errante",
+   "sides": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "effect": "eco",
+   "power": 22,
+   "tier": "comun",
+   "region": "Costa Caribe",
+   "quote": "Imita todo lo que ve, sobre todo lo que no debe.",
+   "whyEffect": "Copia lo que tiene enfrente: Eco.",
+   "inspiredBy": "el tití cabeciblanco",
+   "inSlice": false
+  },
+  {
+   "id": "anteojitos",
+   "name": "Anteojitos",
+   "element": "monte",
+   "sides": [
+    5,
+    5,
+    4,
+    5,
+    4,
+    4
+   ],
+   "effect": "guardian",
+   "power": 31,
+   "tier": "poco_comun",
+   "region": "Andes colombianos",
+   "quote": "Grande, tranquilo y siempre delante de los suyos.",
+   "whyEffect": "Cubre a los demás: Guardián.",
+   "inspiredBy": "el oso de anteojos",
+   "inSlice": true
+  },
+  {
+   "id": "frailin",
+   "name": "Frailín",
+   "element": "monte",
+   "sides": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "effect": "siembra",
+   "power": 29,
+   "tier": "poco_comun",
+   "region": "Páramos andinos",
+   "quote": "Guarda el agua del páramo para todos.",
+   "whyEffect": "Donde se planta, el monte crece: Siembra.",
+   "inspiredBy": "el frailejón del páramo",
+   "inSlice": true
+  },
+  {
+   "id": "rosadito",
+   "name": "Rosadito",
+   "element": "agua",
+   "sides": [
+    5,
+    5,
+    5,
+    4,
+    5,
+    5
+   ],
+   "effect": "firme",
+   "power": 31,
+   "tier": "poco_comun",
+   "region": "Amazonas",
+   "quote": "Juega en el río y nunca se deja atrapar.",
+   "whyEffect": "Escurridizo como el agua: Firme.",
+   "inspiredBy": "el delfín rosado del Amazonas",
+   "inSlice": true
+  },
+  {
+   "id": "zumbi",
+   "name": "Zumbi",
+   "element": "fuego",
+   "sides": [
+    6,
+    4,
+    3,
+    5,
+    3,
+    4
+   ],
+   "effect": "giro",
+   "power": 28,
+   "tier": "poco_comun",
+   "region": "Toda Colombia",
+   "quote": "Va y viene tan rápido que nadie sabe de dónde llegó.",
+   "whyEffect": "Cambia de dirección en el aire: Giro.",
+   "inspiredBy": "el colibrí",
+   "inSlice": true
+  },
+  {
+   "id": "lloraluz",
+   "name": "Lloraluz",
+   "element": "agua",
+   "sides": [
+    6,
+    5,
+    5,
+    5,
+    5,
+    6
+   ],
+   "effect": "reclamo",
+   "power": 36,
+   "tier": "rara",
+   "region": "Ríos de Colombia",
+   "quote": "Recorre los ríos de neón buscando lo que perdió.",
+   "whyEffect": "Busca recuperar a los suyos: Reclamo.",
+   "inspiredBy": "La Llorona",
+   "inSlice": true
+  },
+  {
+   "id": "caimanero",
+   "name": "Caimanero",
+   "element": "agua",
+   "sides": [
+    6,
+    5,
+    4,
+    5,
+    4,
+    5
+   ],
+   "effect": "empuje",
+   "power": 34,
+   "tier": "rara",
+   "region": "Río Magdalena",
+   "quote": "Mitad hombre, mitad caimán, dueño de la orilla.",
+   "whyEffect": "Embiste desde el agua: Empuje.",
+   "inspiredBy": "El Hombre Caimán",
+   "inSlice": false
+  },
+  {
+   "id": "farolero",
+   "name": "Farolero",
+   "element": "fuego",
+   "sides": [
+    6,
+    5,
+    5,
+    5,
+    5,
+    5
+   ],
+   "effect": "sello",
+   "power": 35,
+   "tier": "rara",
+   "region": "Pacífico",
+   "quote": "Una luz en una canoa: donde ronda, nadie se acerca.",
+   "whyEffect": "Nadie entra a donde alumbra: Sello.",
+   "inspiredBy": "El Riviel",
+   "inSlice": true
+  },
+  {
+   "id": "patasombra",
+   "name": "Patasombra",
+   "element": "monte",
+   "sides": [
+    7,
+    5,
+    5,
+    4,
+    5,
+    6
+   ],
+   "effect": "drenar",
+   "power": 37,
+   "tier": "rara",
+   "region": "Andes colombianos",
+   "quote": "Una sola pierna y mil formas de engañar al cazador.",
+   "whyEffect": "Debilita a quien se le acerca: Drenar.",
+   "inspiredBy": "La Patasola",
+   "inSlice": false
+  },
+  {
+   "id": "silbo",
+   "name": "Silbo",
+   "element": "errante",
+   "sides": [
+    8,
+    5,
+    3,
+    6,
+    3,
+    5
+   ],
+   "effect": "giro",
+   "power": 35,
+   "tier": "rara",
+   "region": "Llanos Orientales",
+   "quote": "Si lo oyes cerca, está lejos.",
+   "whyEffect": "Nunca está donde crees: Giro.",
+   "inspiredBy": "El Silbón",
+   "inSlice": true
+  },
+  {
+   "id": "ala-ancha",
+   "name": "Ala Ancha",
+   "element": "errante",
+   "sides": [
+    6,
+    5,
+    5,
+    4,
+    5,
+    6
+   ],
+   "effect": "manada",
+   "power": 35,
+   "tier": "rara",
+   "region": "Antioquia",
+   "quote": "Llega a caballo, con su sombrero y su jauría.",
+   "whyEffect": "Más fuerte con sus perros: Manada.",
+   "inspiredBy": "El Sombrerón",
+   "inSlice": true
+  },
+  {
+   "id": "rioman",
+   "name": "Riomán",
+   "element": "agua",
+   "sides": [
+    7,
+    6,
+    5,
+    5,
+    5,
+    6
+   ],
+   "effect": "siembra",
+   "power": 40,
+   "tier": "epica",
+   "region": "Tolima y Huila",
+   "quote": "Señor del río; donde pasa, el agua obedece.",
+   "whyEffect": "Hace suyo el río a su alrededor: Siembra de Agua.",
+   "inspiredBy": "El Mohán",
+   "inSlice": true
+  },
+  {
+   "id": "musgamadre",
+   "name": "Musgamadre",
+   "element": "monte",
+   "sides": [
+    7,
+    7,
+    6,
+    5,
+    6,
+    6
+   ],
+   "effect": "espinas",
+   "power": 42,
+   "tier": "epica",
+   "region": "Antioquia y Caldas",
+   "quote": "Castiga a quien daña el monte.",
+   "whyEffect": "Quien la toca, paga: Espinas.",
+   "inspiredBy": "La Madremonte",
+   "inSlice": true
+  },
+  {
+   "id": "trapichero",
+   "name": "Trapichero",
+   "element": "fuego",
+   "sides": [
+    8,
+    7,
+    5,
+    4,
+    5,
+    7
+   ],
+   "effect": "embestida",
+   "power": 43,
+   "tier": "epica",
+   "region": "Valles de caña",
+   "quote": "Nació en la caldera de un trapiche abandonado.",
+   "whyEffect": "Arranca a todo vapor: Embestida.",
+   "inspiredBy": "personaje original",
+   "inSlice": true
+  },
+  {
+   "id": "candela",
+   "name": "Candela",
+   "element": "fuego",
+   "sides": [
+    9,
+    7,
+    6,
+    4,
+    6,
+    7
+   ],
+   "effect": "cadena",
+   "power": 51,
+   "tier": "legendaria",
+   "region": "Llanos Orientales",
+   "quote": "Una llamarada que salta de culpa en culpa por el llano.",
+   "whyEffect": "El fuego pasa de una víctima a la siguiente: Cadena.",
+   "inspiredBy": "La Candileja",
+   "inSlice": true
+  },
+  {
+   "id": "mil-caras",
+   "name": "Mil Caras",
+   "element": "errante",
+   "sides": [
+    8,
+    7,
+    6,
+    5,
+    6,
+    7
+   ],
+   "effect": "traicion",
+   "power": 49,
+   "tier": "legendaria",
+   "region": "Pacífico",
+   "quote": "Puede ser cualquiera que conozcas.",
+   "whyEffect": "Engaña y se lleva al más débil: Traición.",
+   "inspiredBy": "las leyendas de cambiaformas",
+   "inSlice": false
+  }
+ ]
+}
