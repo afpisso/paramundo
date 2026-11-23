@@ -81,6 +81,18 @@ export interface Move {
   rotation?: number;
 }
 
+export type AILevel = 'easy' | 'normal' | 'hard';
+
+export interface AIConfig {
+  captureWeight: number;
+  cadenaCaptureWeight: number;
+  threatWeight: number;
+  modifierWeight: number;
+  powerWeight: number;
+  noise: number;
+  lookahead: { candidates: number; replyWeight: number } | null;
+}
+
 export interface TotemDef {
   cell: [number, number];
   sides: Sides;

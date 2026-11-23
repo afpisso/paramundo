@@ -1,0 +1,29 @@
+{
+  "easy": {
+    "captureWeight": 10,
+    "cadenaCaptureWeight": 10,
+    "threatWeight": 0,
+    "modifierWeight": 0,
+    "powerWeight": 0,
+    "noise": 9,
+    "lookahead": null
+  },
+  "normal": {
+    "captureWeight": 10,
+    "cadenaCaptureWeight": 13,
+    "threatWeight": 2.5,
+    "modifierWeight": 2,
+    "powerWeight": 0.05,
+    "noise": 1.2,
+    "lookahead": null
+  },
+  "hard": {
+    "captureWeight": 10,
+    "cadenaCaptureWeight": 13,
+    "threatWeight": 2.5,
+    "modifierWeight": 2,
+    "powerWeight": 0.05,
+    "noise": 0.6,
+    "lookahead": { "candidates": 6, "replyWeight": 8 }
+  }
+}

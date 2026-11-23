@@ -1,6 +1,6 @@
 # 001: IA con niveles
 
-Estado: pendiente
+Estado: en curso
 
 ## Objetivo
 

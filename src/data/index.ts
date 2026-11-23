@@ -3,7 +3,8 @@
  * Anything wrong in a JSON file fails here, at load time, with a readable message.
  */
 import { cardPower, cellIndex, tierId, tierIndex, validateDeck } from '../core';
-import type { CardDef, LevelDef, Ruleset } from '../core';
+import type { AIConfig, AILevel, CardDef, LevelDef, Ruleset } from '../core';
+import aiJson from './ai.json';
 import cardsJson from './cards.json';
 import decksJson from './decks.json';
 import effectsJson from './effects.json';
@@ -11,6 +12,7 @@ import levelsJson from './levels.json';
 import rulesJson from './rules.json';
 import stringsJson from './strings.es.json';
 import {
+  aiFileSchema,
   cardsFileSchema,
   decksFileSchema,
   effectsFileSchema,
@@ -30,6 +32,7 @@ export const CARD_IDS: ReadonlySet<string> = new Set(CARDS.map((c) => c.id));
 
 export const LEVELS: readonly LevelDef[] = levelsFileSchema.parse(levelsJson).levels;
 export const DECKS = decksFileSchema.parse(decksJson);
+export const AI_LEVELS: Record<AILevel, AIConfig> = aiFileSchema.parse(aiJson);
 export const STRINGS = stringsJson;
 
 export function getCard(id: string): CardData {

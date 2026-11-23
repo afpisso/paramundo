@@ -71,6 +71,21 @@ export const levelSchema = z.strictObject({
 export const levelsFileSchema = z.strictObject({ levels: z.array(levelSchema).min(1) });
 
 export const aiLevelSchema = z.enum(['easy', 'normal', 'hard']);
+export const aiConfigSchema = z.strictObject({
+  captureWeight: z.number().nonnegative(),
+  cadenaCaptureWeight: z.number().nonnegative(),
+  threatWeight: z.number().nonnegative(),
+  modifierWeight: z.number().nonnegative(),
+  powerWeight: z.number().nonnegative(),
+  noise: z.number().nonnegative(),
+  lookahead: z
+    .strictObject({
+      candidates: z.number().int().positive(),
+      replyWeight: z.number().nonnegative(),
+    })
+    .nullable(),
+});
+export const aiFileSchema = z.record(aiLevelSchema, aiConfigSchema);
 export const decksFileSchema = z.strictObject({
   starter: z.array(z.string()),
   /** Provisional test rivals for Phase 1, one deck per AI level. Named NPCs arrive in Phase 2. */

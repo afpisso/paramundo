@@ -5,3 +5,4 @@ export * from './cards';
 export * from './deck';
 export * from './events';
 export * from './rules';
+export * from './ai';
