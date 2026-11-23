@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitest/config';
 import { VitePWA } from 'vite-plugin-pwa';
-import { readBuildInfo, sitePlugin } from './tools/site/plugin';
-import { TOKENS, hex } from './src/ui/tokens';
+import { readBuildInfo, sitePlugin } from './tools/site/plugin.ts';
+import { TOKENS, hex } from './src/ui/tokens.ts';
 
 const build = readBuildInfo();
 

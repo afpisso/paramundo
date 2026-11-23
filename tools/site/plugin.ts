@@ -9,7 +9,7 @@ import { execSync } from 'node:child_process';
 import { readFileSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { Plugin } from 'vite';
-import { TOKENS, hex } from '../../src/ui/tokens';
+import { TOKENS, hex } from '../../src/ui/tokens.ts';
 
 export interface BuildInfo {
   sha: string;
