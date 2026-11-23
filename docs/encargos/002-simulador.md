@@ -1,6 +1,6 @@
 # 002: Simulador de balance
 
-Estado: pendiente
+Estado: en curso
 
 Depende de: 001 aprobado.
 
