@@ -1,6 +1,6 @@
 # 001: IA con niveles
 
-Estado: entregado
+Estado: aprobado
 
 ## Objetivo
 
@@ -119,3 +119,23 @@ El "tier menos" de fácil no va aquí: ya está resuelto con el mazo del rival (
 - Fuera del encargo que vi y no toqué: el build local falló por memoria tanto dentro como fuera del
   sandbox; el job `build` de GitHub Actions sí pasó, incluido `npm run build`. No se modificaron
   configuración de compilación, reglas, cartas, mazos, arte ni archivos de Claude.
+
+## Revisión (Claude, 2026-11-23)
+
+Aprobado sin correcciones.
+
+- Archivos: solo los permitidos por el encargo. Sin cambios en `CLAUDE.md`, arte, reglas, cartas, mazos
+  ni en los tests anteriores. La entrega está sobre Siembra y Sello 1/1/2/3/3.
+- Especificación: firma, orden de recorrido, desempates, `caps`, `mod`, `power`, `threat` y las tres
+  fórmulas coinciden con el encargo; `ai.json` tiene los valores pedidos.
+- Fidelidad al prototipo, comprobada aparte: en 400 partidas al azar, 9.600 decisiones de fácil y normal
+  (sin ruido) comparadas contra el `aiMove()` original del prototipo, todas idénticas.
+- Rendimiento de difícil en 4.800 jugadas: mediana 1 ms, máximo 9,5 ms (límite 150 ms).
+- `npm run check`: 66 tests en verde. Workflow del commit `4a43024` en verde.
+
+Observaciones menores, no bloquean:
+
+- `tests/core/ai.test.ts` afirma un tiempo máximo dentro de un test unitario. Con este margen no debería
+  fallar, pero si algún día falla en una máquina lenta de CI, se quita esa afirmación, no se sube el límite.
+- El `npm run build` local falla por memoria en el computador de Andrés (en GitHub Actions pasa). A tener
+  en cuenta en el encargo 003: para probar en local usa `npm run dev`, no el build.
