@@ -12,5 +12,49 @@
     "frailin",
     "rosadito",
     "zumbi"
-  ]
+  ],
+  "rivals": {
+    "easy": [
+      "chigui",
+      "chigui",
+      "chigui",
+      "doradita",
+      "doradita",
+      "doradita",
+      "guaca",
+      "guaca",
+      "guaca",
+      "titin",
+      "titin",
+      "titin"
+    ],
+    "normal": [
+      "chigui",
+      "chigui",
+      "doradita",
+      "doradita",
+      "guaca",
+      "guaca",
+      "titin",
+      "titin",
+      "anteojitos",
+      "frailin",
+      "rosadito",
+      "zumbi"
+    ],
+    "hard": [
+      "anteojitos",
+      "anteojitos",
+      "frailin",
+      "frailin",
+      "rosadito",
+      "rosadito",
+      "zumbi",
+      "zumbi",
+      "lloraluz",
+      "caimanero",
+      "farolero",
+      "silbo"
+    ]
+  }
 }

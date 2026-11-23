@@ -70,6 +70,11 @@ export const levelSchema = z.strictObject({
 });
 export const levelsFileSchema = z.strictObject({ levels: z.array(levelSchema).min(1) });
 
-export const decksFileSchema = z.strictObject({ starter: z.array(z.string()) });
+export const aiLevelSchema = z.enum(['easy', 'normal', 'hard']);
+export const decksFileSchema = z.strictObject({
+  starter: z.array(z.string()),
+  /** Provisional test rivals for Phase 1, one deck per AI level. Named NPCs arrive in Phase 2. */
+  rivals: z.record(aiLevelSchema, z.array(z.string())),
+});
 
 export type CardData = z.infer<typeof cardSchema>;

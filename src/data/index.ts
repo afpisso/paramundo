@@ -66,8 +66,12 @@ export function validateData(
     for (const [q, r] of cells)
       if (cellIndex(q, r) < 0) problems.push(`${l.id}: cell ${q},${r} is off the board.`);
   }
-  const starter = validateDeck(DECKS.starter, new Set(cards.map((c) => c.id)), rules);
-  if (!starter.ok) problems.push(`Starter deck invalid: ${JSON.stringify(starter.errors)}`);
+  const ids = new Set(cards.map((c) => c.id));
+  const decks: [string, readonly string[]][] = [['starter', DECKS.starter], ...Object.entries(DECKS.rivals)];
+  for (const [name, deck] of decks) {
+    const result = validateDeck(deck, ids, rules);
+    if (!result.ok) problems.push(`Deck "${name}" invalid: ${JSON.stringify(result.errors)}`);
+  }
   return problems;
 }
 
