@@ -90,9 +90,12 @@ juego para pedir la textura.
 
 ## Producción
 
-- Claude produce los assets: los de interfaz y tablero con un script (`tools/art/`), y los de personajes
-  con un generador de imágenes más un posproceso (reducir a tamaño nativo sin suavizado, cuantizar a la
-  paleta, recortar en hexágono, exportar WebP sin pérdida).
+- Interfaz y tablero: Claude los produce con un script (`tools/art/`).
+- Personajes: se generan con ChatGPT. Claude escribe los prompts en `docs/art/prompts-chatgpt.md`; Andrés
+  los pega en ChatGPT, descarga cada imagen como `<id>.png` y la sube a `art-src/cards/` desde la web de
+  GitHub. Claude hace el posproceso (quitar fondo, reducir a tamaño nativo sin suavizado, cuantizar a la
+  paleta, recortar en hexágono, exportar WebP sin pérdida a `public/art/cards/`) y actualiza el manifiesto.
+- `art-src/` guarda los originales sin procesar. El juego nunca los carga.
 - Andrés aprueba el estilo con el primer lote antes de producir el resto, y puede reemplazar cualquier
   archivo por arte propio respetando nombre y tamaño.
 - No se inventan personajes: solo se ilustran cartas que existen en `src/data/cards.json`.

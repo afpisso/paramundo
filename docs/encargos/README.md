@@ -42,7 +42,7 @@ Haz git pull. Lee docs/encargos/README.md y ejecuta el encargo con estado "pendi
 
 | Quién  | Es dueño de                                                                                                                                                                                              |
 | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Claude | `CLAUDE.md`, `AGENTS.md`, `docs/`, `public/art/`, `tools/art/`, contenido de `src/data/*.json` (cartas, mazos, niveles, economía, textos de lore), revisiones                                            |
+| Claude | `CLAUDE.md`, `AGENTS.md`, `docs/`, `public/art/`, `art-src/`, `tools/art/`, contenido de `src/data/*.json` (cartas, mazos, niveles, economía, textos de lore), revisiones                                |
 | Codex  | `src/core/`, `src/scenes/`, `src/ui/`, `src/fx/`, `src/save/`, `tools/sim/`, `tests/`, y las partes de `src/data/` que el encargo indique (esquemas, claves nuevas de configuración, textos de interfaz) |
 
 Mientras un encargo está `en curso`, Claude no toca los archivos de ese encargo. Mientras no haya encargo
