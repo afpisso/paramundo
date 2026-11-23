@@ -18,8 +18,8 @@ misiones diarias, localización, tiendas de apps, analítica en servidor.
 ## Fases
 
 0. Base (hecha): repo, Vite, Phaser, TS estricto, lint, Vitest, PWA, deploy a Pages, este archivo.
-1. Combate: núcleo con tests y paridad (hecho); IA con niveles (encargo 001), simulador (002) y escena
-   de combate (003), a cargo de Codex.
+1. Combate: núcleo con tests y paridad (hecho); IA con niveles (hecha, encargo 001); simulador (002) y
+   escena de combate (003) pendientes, a cargo de Codex.
 2. Bucle completo: ruta, recompensas, tienda, sobres, colección, mazo, guardado, tutorial.
 3. Pulido: animaciones, sonido, vibración, transiciones.
 4. Playtest: métricas locales, pantalla de stats, balance con el simulador.
@@ -204,6 +204,18 @@ cada tres combates. Duplicados se convierten en Esencia: +1 en un lado, una sola
   los prompts (`docs/art/prompts-chatgpt.md`), Andrés genera y sube los originales a `art-src/` desde la
   web de GitHub, y Claude los reduce a tamaño nativo, los integra en `public/art/` y actualiza el
   manifiesto. Reemplaza la entrada anterior sobre el generador de imágenes.
+
+### 2026-11-23 (encargo 001 aprobado: IA con niveles)
+
+- `chooseMove(state, rules, config, rng)` en `src/core/ai.ts`; pesos por nivel en `src/data/ai.json`,
+  expuestos como `AI_LEVELS`. Fácil y normal dan exactamente la misma jugada que `aiMove()` del prototipo
+  (comprobado en 9.600 decisiones sin ruido).
+- La IA evalúa la posición "carta colocada, antes de voltear" sobre una copia superficial del tablero,
+  solo para leer zona, Manada y amenaza. `applyMove` sigue siendo la única fuente de capturas; `rules.ts`
+  no cambió.
+- Empates de puntaje: gana la primera jugada en el orden casilla, carta, rotación, también en difícil.
+- Sin jugadas legales o con la partida terminada, `chooseMove` lanza `IllegalMoveError`.
+- La IA consume una muestra del RNG por jugada candidata y ninguna otra fuente de azar.
 
 ## Pendientes de diseño (preguntar a Andrés)
 
