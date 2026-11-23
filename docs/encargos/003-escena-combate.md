@@ -80,6 +80,10 @@ defecto sin romper.
 - Los rivales de esta fase no tienen nombre ni frase: muestra "Rival". No inventes personajes.
 - No cambies reglas, cartas, mazos ni valores. No edites `docs/art/` ni `public/art/`.
 - Nada de reglas en la escena: si necesitas un dato que el núcleo no expone, agrégalo al núcleo con test.
+- Respeta la marca de versión de la esquina inferior derecha y la barra "Actualizar" (`src/pwa.ts`, son
+  HTML encima del canvas): no las tapes con botones ni las quites. `main.ts` sigue llamando a `setupPwa()`.
+- En el computador de Andrés `npm run build` falla por memoria: para probar en local usa `npm run dev`; el
+  build lo valida GitHub Actions.
 - Textos en `strings.es.json`, en español y sin guiones largos.
 
 ## Criterio de terminado
@@ -90,6 +94,7 @@ defecto sin romper.
 - Con `manifest.json` vacío todo se ve con placeholders; agregando un `cards/<id>.webp` y su línea en el
   manifiesto, esa carta muestra el arte sin tocar código.
 - El ajuste elegido persiste al recargar. El modo rápido funciona.
-- `npm run check` y workflow en verde. Sección **Entrega** llena, con dos capturas de pantalla en
+- `npm run check` y workflow en verde. En **Entrega**, el enlace para probar es
+  https://afpisso.github.io/paramundo/. Sección **Entrega** llena, con dos capturas de pantalla en
   `docs/encargos/capturas/003-*.png` (viewport de celular): una a mitad de partida con etiquetas de choque
   y otra del panel final.

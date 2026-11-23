@@ -4,9 +4,9 @@ Cómo se usa:
 
 1. Abre un chat nuevo en ChatGPT y pega el **mensaje de estilo**. Ya incluye la primera carta.
 2. Para cada carta siguiente, pega su línea en el **mismo chat**, una por una, para que conserve el estilo.
-3. Descarga cada imagen y renómbrala con el nombre indicado (`chigui.png`, etc.).
-4. Súbelas en https://github.com/afpisso/paramundo/upload/main/art-src/cards (arrastra los archivos y
-   pulsa "Commit changes").
+3. Descarga las imágenes. No hace falta renombrarlas: Claude reconoce cada criatura al procesarlas.
+4. Arrástralas todas juntas a https://github.com/afpisso/paramundo/upload/main/art-src/cards y pulsa
+   "Commit changes".
 5. Avísale a Claude: "subí el lote 1".
 
 Si una imagen sale con texto, marco, sombra, varios personajes o el personaje cortado, pide en el mismo
