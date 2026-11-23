@@ -18,7 +18,8 @@ misiones diarias, localización, tiendas de apps, analítica en servidor.
 ## Fases
 
 0. Base (hecha): repo, Vite, Phaser, TS estricto, lint, Vitest, PWA, deploy a Pages, este archivo.
-1. Combate: núcleo con tests y paridad (hecho), IA con niveles, escena de combate, simulador.
+1. Combate: núcleo con tests y paridad (hecho); IA con niveles (encargo 001), simulador (002) y escena
+   de combate (003), a cargo de Codex.
 2. Bucle completo: ruta, recompensas, tienda, sobres, colección, mazo, guardado, tutorial.
 3. Pulido: animaciones, sonido, vibración, transiciones.
 4. Playtest: métricas locales, pantalla de stats, balance con el simulador.
@@ -94,6 +95,33 @@ cada tres combates. Duplicados se convierten en Esencia: +1 en un lado, una sola
   salga de su historia.
 - Tribus: Agua (río de neón), Monte (biopunk), Fuego (vapor y trapiche), Errantes (ciudad pirata).
 
+## Dirección visual: pixel art
+
+- Estilo: pixel art (el estilo pixel de la marca). Reemplaza la dirección anterior ("arte popular
+  colombiano llevado al futuro, con neón, interfaz sobria"). Las cuatro tribus conservan su estética.
+- La especificación completa (render, tamaños, paleta, tipografías, lista de assets, manifiesto y
+  placeholders) está en `docs/art/ESPEC.md`. Resumen: lienzo lógico 360 x 640 con escala entera y sin
+  suavizado; un píxel de arte = 2 x 2 lógicos; casilla y carta de 40 x 36 nativo; ícono de carta de
+  36 x 32 nativo en WebP sin pérdida.
+- El juego dibuja encima del arte el marco del dueño (azul jugador, coral rival), números, tier, elemento
+  y efecto. Los números deben leerse en un celular.
+- Si falta un asset, el juego genera por código una textura con la misma clave (`public/art/manifest.json`
+  dice qué existe). Nunca se rompe nada por arte faltante.
+- Colores y tipografías solo en `src/ui/tokens.ts`, para poder re-pielar.
+
+## Cómo se trabaja: Claude dirige, Codex implementa
+
+- Claude (sesión en la nube) decide qué se hace y en qué orden, escribe los encargos, produce el arte,
+  mantiene este archivo y revisa cada entrega. Codex (CLI en el computador de Andrés) implementa. Andrés
+  hace de puente y decide el diseño.
+- No hay canal directo: se coordinan por el repositorio. El flujo, las reglas y el reparto de archivos
+  están en `docs/encargos/README.md`; cada encargo es un archivo `docs/encargos/NNN-nombre.md` con su
+  estado en la primera línea (`pendiente`, `en curso`, `entregado`, `aprobado`, `corregir`).
+- **Solo Claude edita `CLAUDE.md`, `docs/art/` y `public/art/`.** Codex anota sus decisiones en la sección
+  Entrega del encargo y Claude las pasa aquí al aprobar.
+- Una entrega se aprueba si respeta este archivo, `npm run check` pasa, el workflow queda en verde y
+  cumple el criterio de terminado del encargo.
+
 ## Arquitectura
 
 - `src/core/`: reglas puras. Sin Phaser, sin DOM, sin importar datos, sin `Math.random` (ESLint lo
@@ -102,6 +130,8 @@ cada tres combates. Duplicados se convierten en Esencia: +1 en un lado, una sola
 - `src/config.ts`: nombre del juego y de la moneda (provisionales), en un solo lugar.
 - `src/ui/tokens.ts`: colores y tipografías. Ningún literal de color o fuente fuera de ahí.
 - `src/scenes/`, `src/ui/`, `src/fx/`, `src/save/`: Phaser, componentes, efectos, guardado.
+- `docs/encargos/`: encargos para Codex. `docs/art/ESPEC.md`: especificación de arte.
+- `public/art/`: assets y `manifest.json`. `tools/art/`: scripts de producción de arte.
 - `tools/parity/oracle.js`: lógica del prototipo sin DOM. No se "mejora": es el patrón de comparación.
 - `tests/`: Vitest. `tests/parity` juega partidas al azar en el oráculo y en el núcleo, y compara el
   estado completo después de cada jugada.
@@ -147,9 +177,28 @@ cada tres combates. Duplicados se convierten en Esencia: +1 en un lado, una sola
   lienzo lógico 720x1280 con escala FIT; el núcleo recibe el `Ruleset` por parámetro en vez de
   importar JSON, para poder simular variantes de balance.
 
+### 2026-11-23 (dirección y reparto)
+
+- **Dirección visual: pixel art**, pedida por Andrés. Especificación en `docs/art/ESPEC.md`.
+- **Claude dirige y Codex implementa**, coordinados por encargos en el repo (`docs/encargos/`).
+- **Lienzo lógico 360 x 640 con escala entera** en píxeles físicos (antes 720 x 1280 con FIT): es lo que
+  da píxeles nítidos y parejos en celular.
+- **Casilla hexagonal de 40 x 36 nativo** (no un hexágono regular exacto): pasos enteros de 30 y 36 para
+  que todo caiga en la rejilla de píxeles.
+- **Manifiesto de arte** (`public/art/manifest.json`): el juego solo pide archivos que existen y genera
+  por código lo que falte, con la misma clave y tamaño.
+- **Rivales de prueba de la Fase 1** (`decks.json`, `rivals`), provisionales y sin nombre: fácil con solo
+  comunes (el "tier menos" del brief), normal con el mazo inicial, difícil con poco comunes y raras. Los
+  NPC con nombre, mazo y frase llegan en la Fase 2 y los diseña Andrés.
+- **IA difícil**: la normal del prototipo más una mirada a la mejor respuesta rival sobre las 6 mejores
+  jugadas. Pesos en `ai.json`, provisionales.
+- **Arte de personajes**: lo produce Claude con un generador de imágenes y posproceso a tamaño nativo.
+  Andrés aprueba el estilo con el primer lote.
+
 ## Pendientes de diseño (preguntar a Andrés)
 
 - Confirmar Siembra y Sello por tier (brief 1/2/3 o prototipo 1/1/2/3/3).
+- Aprobar el estilo del primer lote de íconos de carta en pixel art.
 - Qué pasa con un empate en la ruta.
 - Regla especial del bioma para el jefe Riomán (Claude propone).
 - Comunes nuevas para el mazo inicial y el resto de cartas hasta unas 40.
