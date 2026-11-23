@@ -1,6 +1,6 @@
 # 001: IA con niveles
 
-Estado: en curso
+Estado: entregado
 
 ## Objetivo
 
@@ -94,3 +94,28 @@ El "tier menos" de fácil no va aquí: ya está resuelto con el mazo del rival (
   cuya respuesta rival captura más de lo que gana; `threat` es 0 con Firme.
 - Los 56 tests existentes siguen pasando sin modificarlos. `npm run check` en verde. Workflow en verde.
 - Sección **Entrega** llena.
+
+## Entrega
+
+- Commits: `b9fa9d0..a0d16a1` (implementación y pruebas); cierre documental en el commit de esta entrega.
+- Qué quedó hecho: `chooseMove(state, rules, config, rng)` exportado desde el núcleo, con fácil,
+  normal y difícil; pesos en `ai.json`, validados al cargar y expuestos como `AI_LEVELS`. Difícil evalúa
+  las seis mejores candidatas y penaliza la mejor respuesta rival contando ambas oleadas.
+- Cómo probarlo: `npm run check` (66 tests, los 56 existentes sin cambios) y
+  `npx vitest run tests/core/ai.test.ts --reporter=verbose`. Las 200 partidas con semilla cubren los tres
+  niveles de IA y los cinco tableros, hasta el final, comprobando cada jugada. Las pruebas tácticas cubren
+  capturas, Giro, amenazas antes de Espinas, Firme, desempates, respuesta rival con Cadena y fin de partida.
+  En la corrida local focalizada, la jugada difícil más lenta tardó 3,39 ms (límite: 150 ms).
+  Workflow de implementación en verde, build y despliegue:
+  https://github.com/afpisso/paramundo/actions/runs/45267841661.
+- Decisiones:
+  - La posición previa a los volteos usa una copia superficial del tablero, solo para lectura de zona,
+    Manada y amenaza; `applyMove` sigue siendo la única fuente de resolución y capturas. No fue necesario
+    modificar `rules.ts`.
+  - Se conserva el orden casilla/mano/rotación también en los empates del puntaje final de difícil.
+  - Sin jugadas legales o con partida terminada, se lanza `IllegalMoveError`, siguiendo el núcleo.
+  - No se usan fuentes de azar adicionales: se consume una muestra del RNG recibido por candidata.
+- Preguntas: ninguna decisión de diseño nueva.
+- Fuera del encargo que vi y no toqué: el build local falló por memoria tanto dentro como fuera del
+  sandbox; el job `build` de GitHub Actions sí pasó, incluido `npm run build`. No se modificaron
+  configuración de compilación, reglas, cartas, mazos, arte ni archivos de Claude.
