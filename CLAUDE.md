@@ -49,18 +49,18 @@ del efecto. Común <= 26, Poco común 27 a 32, Rara 33 a 38, Épica 39 a 45, Leg
 
 ### Efectos del slice (como mucho uno por carta)
 
-| Efecto | Costo | Regla |
-|---|---|---|
-| Embestida | 3 | +1 al atacar, solo el turno en que se juega |
-| Reclamo | 4 | +2 al atacar cartas que alguna vez fueron tuyas |
-| Guardián | 4 | Si varias cartas de su dueño van a caer de un golpe, solo cae esta |
-| Firme | 2 | No puede ser capturada durante la siguiente jugada rival |
-| Espinas | 3 | La carta que la capture pierde 1 en todos sus lados hasta el final de la partida (mínimo 1) |
-| Manada | 4 | +1 en todos sus lados por cada aliada vecina, hasta +2. Dinámica; no cuenta tótems |
-| Siembra | 5 | Crea zonas de su elemento en 1, 2 o 3 vecinas libres según tier, frente a sus lados más altos |
-| Sello | 4 | Bloquea al rival 1, 2 o 3 vecinas libres según tier, frente a sus lados más débiles, un turno |
-| Giro | 3 | Se puede rotar de a un sexto de vuelta antes de jugarla |
-| Cadena | 7 | Solo legendarias. Las cartas que captura atacan a sus vecinas, una sola vez |
+| Efecto    | Costo | Regla                                                                                         |
+| --------- | ----- | --------------------------------------------------------------------------------------------- |
+| Embestida | 3     | +1 al atacar, solo el turno en que se juega                                                   |
+| Reclamo   | 4     | +2 al atacar cartas que alguna vez fueron tuyas                                               |
+| Guardián  | 4     | Si varias cartas de su dueño van a caer de un golpe, solo cae esta                            |
+| Firme     | 2     | No puede ser capturada durante la siguiente jugada rival                                      |
+| Espinas   | 3     | La carta que la capture pierde 1 en todos sus lados hasta el final de la partida (mínimo 1)   |
+| Manada    | 4     | +1 en todos sus lados por cada aliada vecina, hasta +2. Dinámica; no cuenta tótems            |
+| Siembra   | 5     | Crea zonas de su elemento en 1, 2 o 3 vecinas libres según tier, frente a sus lados más altos |
+| Sello     | 4     | Bloquea al rival 1, 2 o 3 vecinas libres según tier, frente a sus lados más débiles, un turno |
+| Giro      | 3     | Se puede rotar de a un sexto de vuelta antes de jugarla                                       |
+| Cadena    | 7     | Solo legendarias. Las cartas que captura atacan a sus vecinas, una sola vez                   |
 
 Siembra y Sello por tier: común 1, poco común 2, rara o más 3 (`effects.json`, `cellsByTier`).
 Recortados para expansiones: Vínculo, Disolver, Empuje, Drenar, Traición, Testamento, Eco.
