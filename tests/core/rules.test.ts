@@ -300,16 +300,19 @@ describe('Manada', () => {
 describe('Siembra', () => {
   const zonesOf = (s: GameState) => s.zones.flatMap((z, i) => (z ? [[i, z]] : []));
 
-  it('creates 1, 2 or 3 zones by tier, in front of its highest sides', () => {
+  it('creates 1, 1, 2, 3, 3 zones by tier, in front of its highest sides', () => {
     const comun = game([card([1, 1, 6, 1, 5, 1], 'agua', 'siembra')]);
     expect(zonesOf(play(comun, { handIndex: 0, cell: center }).state)).toEqual([[at(1, 0), 'agua']]);
 
     const pocoComun = game([card(4, 'monte', 'siembra')]); // Frailín: ties keep N, NE, ... order
-    expect(
-      zonesOf(play(pocoComun, { handIndex: 0, cell: center }).state)
-        .map(([i]) => i)
-        .sort(),
-    ).toEqual([at(0, -1), at(1, -1)].sort());
+    expect(zonesOf(play(pocoComun, { handIndex: 0, cell: center }).state)).toEqual([[at(0, -1), 'monte']]);
+
+    const rara = game([card([6, 5, 4, 5, 4, 5], 'agua', 'siembra')]); // 29 + 5 = 34
+    expect(play(rara, { handIndex: 0, cell: center }).events.find((e) => e.type === 'siembra')).toMatchObject(
+      {
+        cells: [at(0, -1), at(1, -1)],
+      },
+    );
 
     const epica = game([card([7, 6, 5, 5, 5, 6], 'agua', 'siembra')]); // Riomán
     const r = play(epica, { handIndex: 0, cell: center });
@@ -327,7 +330,7 @@ describe('Siembra', () => {
     const { state } = play(s, { handIndex: 0, cell: center });
     expect([state.zones[at(1, 0)], state.zones[at(0, 1)], state.zones[at(0, -1)]]).toEqual([
       'monte',
-      'monte',
+      null,
       null,
     ]);
 
@@ -337,12 +340,12 @@ describe('Siembra', () => {
 });
 
 describe('Sello', () => {
-  const farolero = () => card([6, 5, 5, 5, 5, 5], 'fuego', 'sello'); // rara: 3 cells
+  const farolero = () => card([6, 5, 5, 5, 5, 5], 'fuego', 'sello'); // rara: 2 cells
 
   it('blocks the rival in front of its weakest sides during their next turn only', () => {
     const s = game([farolero(), card(1)], [card(1), card(1)]);
     const a = play(s, { handIndex: 0, cell: center });
-    const sealed = [at(1, -1), at(1, 0), at(0, 1)];
+    const sealed = [at(1, -1), at(1, 0)];
     expect(a.state.seals).toEqual(sealed.map((cell) => ({ cell, owner: 0 })));
     expect(legalCells(a.state, 1)).not.toContain(at(1, 0));
     expect(legalCells(a.state, 0)).toContain(at(1, 0));

@@ -5,8 +5,8 @@
   "firme": { "cost": 2 },
   "espinas": { "cost": 3, "penalty": 1 },
   "manada": { "cost": 4, "perAlly": 1, "cap": 2 },
-  "siembra": { "cost": 5, "cellsByTier": [1, 2, 3, 3, 3] },
-  "sello": { "cost": 4, "cellsByTier": [1, 2, 3, 3, 3] },
+  "siembra": { "cost": 5, "cellsByTier": [1, 1, 2, 3, 3] },
+  "sello": { "cost": 4, "cellsByTier": [1, 1, 2, 3, 3] },
   "giro": { "cost": 3 },
   "cadena": { "cost": 7, "minTier": "legendaria" }
 }
