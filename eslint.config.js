@@ -3,7 +3,7 @@ import tseslint from 'typescript-eslint';
 import prettier from 'eslint-config-prettier';
 
 export default tseslint.config(
-  { ignores: ['dist', 'dev-dist', 'node_modules', 'referencias', 'coverage'] },
+  { ignores: ['dist', 'dev-dist', 'node_modules', 'referencias', 'coverage', 'public/sw-migrate.js'] },
   js.configs.recommended,
   ...tseslint.configs.strict,
   prettier,

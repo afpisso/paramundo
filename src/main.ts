@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { setupPwa } from './pwa';
 import { BootScene } from './scenes/BootScene';
 import { TOKENS } from './ui/tokens';
 
@@ -14,3 +15,5 @@ new Phaser.Game({
   },
   scene: [BootScene],
 });
+
+setupPwa();

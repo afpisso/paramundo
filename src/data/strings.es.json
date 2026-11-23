@@ -1,6 +1,14 @@
 {
-  "boot": { "tagline": "Vertical slice en construcción", "build": "Fase 0: base lista" },
-  "elements": { "fuego": "Fuego", "agua": "Agua", "monte": "Monte", "errante": "Errante" },
+  "boot": {
+    "tagline": "Vertical slice en construcción",
+    "build": "Fase 0: base lista"
+  },
+  "elements": {
+    "fuego": "Fuego",
+    "agua": "Agua",
+    "monte": "Monte",
+    "errante": "Errante"
+  },
   "tiers": {
     "comun": "Común",
     "poco_comun": "Poco común",
@@ -9,26 +17,44 @@
     "legendaria": "Legendaria"
   },
   "levels": {
-    "claro": { "name": "Claro", "description": "Pocas rocas y zonas de Monte en el centro." },
-    "rio-partido": { "name": "Río partido", "description": "Un río de Agua parte el tablero en dos." },
+    "claro": {
+      "name": "Claro",
+      "description": "Pocas rocas y zonas de Monte en el centro."
+    },
+    "rio-partido": {
+      "name": "Río partido",
+      "description": "Un río de Agua parte el tablero en dos."
+    },
     "caldera": {
       "name": "Caldera",
       "description": "Un volcán en el centro y un tótem de Fuego que nadie controla."
     },
-    "ruinas": { "name": "Ruinas", "description": "Rocas dispersas y dos tótems antiguos en disputa." },
-    "grieta": { "name": "Grieta", "description": "Una grieta deja un solo puente, custodiado por un tótem." }
+    "ruinas": {
+      "name": "Ruinas",
+      "description": "Rocas dispersas y dos tótems antiguos en disputa."
+    },
+    "grieta": {
+      "name": "Grieta",
+      "description": "Una grieta deja un solo puente, custodiado por un tótem."
+    }
   },
   "effects": {
     "embestida": {
       "name": "Embestida",
       "description": "+1 en todos sus lados al atacar, solo el turno en que la juegas."
     },
-    "reclamo": { "name": "Reclamo", "description": "+2 al atacar cartas que alguna vez fueron tuyas." },
+    "reclamo": {
+      "name": "Reclamo",
+      "description": "+2 al atacar cartas que alguna vez fueron tuyas."
+    },
     "guardian": {
       "name": "Guardián",
       "description": "Si varias cartas tuyas van a caer de un golpe, solo cae esta."
     },
-    "firme": { "name": "Firme", "description": "No puede ser capturada durante la siguiente jugada rival." },
+    "firme": {
+      "name": "Firme",
+      "description": "No puede ser capturada durante la siguiente jugada rival."
+    },
     "espinas": {
       "name": "Espinas",
       "description": "La carta que la capture pierde 1 en todos sus lados hasta el final de la partida."
@@ -53,5 +79,10 @@
       "name": "Cadena",
       "description": "Las cartas que captura atacan a su vez a sus vecinas, una sola vez."
     }
+  },
+  "site": {
+    "status": "estado",
+    "updateAvailable": "Hay una versión nueva.",
+    "update": "Actualizar"
   }
 }
