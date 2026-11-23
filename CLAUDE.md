@@ -123,6 +123,25 @@ cada tres combates. Duplicados se convierten en Esencia: +1 en un lado, una sola
 - Una entrega se aprueba si respeta este archivo, `npm run check` pasa, el workflow queda en verde y
   cumple el criterio de terminado del encargo.
 
+## Cómo prueba Andrés: enlaces, no comandos
+
+Andrés es diseñador, no programador. Ver y probar el juego es abrir un enlace en el celular o el navegador:
+
+- Juego: https://afpisso.github.io/paramundo/ (abajo a la derecha: commit y fecha del build publicado).
+- Prototipo original: https://afpisso.github.io/paramundo/prototipo/ (copia exacta de `referencias/`).
+- Estado del proyecto: https://afpisso.github.io/paramundo/estado/ (versión publicada, enlaces de prueba
+  y estado de cada encargo).
+
+Reglas para Claude y Codex:
+
+- Cada respuesta a Andrés le da enlaces para abrir, no comandos para correr. Tests, build, workflow,
+  caché y archivos los manejan Claude o Codex.
+- Si algo exige de verdad su computador, se explica por qué en una línea y se da un solo paso.
+- Su papel en el flujo: pegar el mensaje fijo a Codex, avisar a Claude, probar desde un enlace y decidir
+  el diseño. En el arte: pegar prompts en ChatGPT y arrastrar las imágenes a GitHub, sin renombrarlas.
+- Las actualizaciones llegan solas: una recarga muestra lo último; si el juego estaba abierto aparece una
+  barra con el botón "Actualizar". Nunca se le pide borrar datos del sitio.
+
 ## Arquitectura
 
 - `src/core/`: reglas puras. Sin Phaser, sin DOM, sin importar datos, sin `Math.random` (ESLint lo
@@ -133,6 +152,8 @@ cada tres combates. Duplicados se convierten en Esencia: +1 en un lado, una sola
 - `src/scenes/`, `src/ui/`, `src/fx/`, `src/save/`: Phaser, componentes, efectos, guardado.
 - `docs/encargos/`: encargos para Codex. `docs/art/ESPEC.md`: especificación de arte.
 - `public/art/`: assets y `manifest.json`. `tools/art/`: scripts de producción de arte.
+- `tools/site/plugin.ts`: en el build publica `version.json`, el prototipo en `prototipo/` y la página
+  `estado/`. `src/pwa.ts`: marca de versión, registro del service worker y aviso de actualización.
 - `tools/parity/oracle.js`: lógica del prototipo sin DOM. No se "mejora": es el patrón de comparación.
 - `tests/`: Vitest. `tests/parity` juega partidas al azar en el oráculo y en el núcleo, y compara el
   estado completo después de cada jugada.
@@ -216,6 +237,21 @@ cada tres combates. Duplicados se convierten en Esencia: +1 en un lado, una sola
 - Empates de puntaje: gana la primera jugada en el orden casilla, carta, rotación, también en difícil.
 - Sin jugadas legales o con la partida terminada, `chooseMove` lanza `IllegalMoveError`.
 - La IA consume una muestra del RNG por jugada candidata y ninguna otra fuente de azar.
+
+### 2026-11-23 (probar sin terminal)
+
+- **Andrés prueba con enlaces, no con comandos** (pedido por Andrés). Ver la sección "Cómo prueba Andrés".
+- **Prototipo publicado** en `prototipo/`, copiado byte a byte desde `referencias/` en cada build.
+- **Marca de versión** (commit corto y fecha en hora de Colombia) en la esquina del juego, y
+  `version.json` con lo mismo.
+- **Actualizaciones**: el HTML nunca se guarda en el precache del service worker (va red primero) y el
+  worker nuevo toma el control al instante. Como GitHub Pages deja el HTML 10 minutos en la caché del
+  navegador, al abrir el juego compara su versión con `version.json` y, si hay una más nueva, salta a ella
+  por una dirección que esa caché no tiene (`?v=<sha>`), y luego limpia la barra de direcciones. Con el
+  juego abierto no recarga solo: muestra la barra "Actualizar", para no cortar una partida.
+- **Migración única** (`public/sw-migrate.js`): los celulares con el service worker anterior recargan una
+  sola vez solos al recibir el nuevo. Comprobado en navegador con un servidor que cachea como Pages.
+- **Arte sin renombrar**: Andrés sube las imágenes con cualquier nombre y Claude identifica cada criatura.
 
 ## Pendientes de diseño (preguntar a Andrés)
 
