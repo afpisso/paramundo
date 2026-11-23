@@ -63,7 +63,8 @@ del efecto. Común <= 26, Poco común 27 a 32, Rara 33 a 38, Épica 39 a 45, Leg
 | Giro      | 3     | Se puede rotar de a un sexto de vuelta antes de jugarla                                       |
 | Cadena    | 7     | Solo legendarias. Las cartas que captura atacan a sus vecinas, una sola vez                   |
 
-Siembra y Sello por tier: común 1, poco común 2, rara o más 3 (`effects.json`, `cellsByTier`).
+Siembra y Sello por tier: común 1, poco común 1, rara 2, épica 3, legendaria 3 (`effects.json`,
+`cellsByTier`), igual que el prototipo.
 Recortados para expansiones: Vínculo, Disolver, Empuje, Drenar, Traición, Testamento, Eco.
 
 ### Orden de resolución (verificado contra `play()` del prototipo)
@@ -195,9 +196,17 @@ cada tres combates. Duplicados se convierten en Esencia: +1 en un lado, una sola
 - **Arte de personajes**: lo produce Claude con un generador de imágenes y posproceso a tamaño nativo.
   Andrés aprueba el estilo con el primer lote.
 
+### 2026-11-23 (Siembra, Sello y arte)
+
+- **Siembra y Sello por tier: 1, 1, 2, 3, 3**, como el prototipo (decisión de Andrés). Reemplaza el
+  1, 2, 3 del brief que estaba puesto de forma provisional.
+- **El arte de personajes se genera con ChatGPT**, que Andrés ya paga, no con ElevenLabs. Claude escribe
+  los prompts (`docs/art/prompts-chatgpt.md`), Andrés genera y sube los originales a `art-src/` desde la
+  web de GitHub, y Claude los reduce a tamaño nativo, los integra en `public/art/` y actualiza el
+  manifiesto. Reemplaza la entrada anterior sobre el generador de imágenes.
+
 ## Pendientes de diseño (preguntar a Andrés)
 
-- Confirmar Siembra y Sello por tier (brief 1/2/3 o prototipo 1/1/2/3/3).
 - Aprobar el estilo del primer lote de íconos de carta en pixel art.
 - Qué pasa con un empate en la ruta.
 - Regla especial del bioma para el jefe Riomán (Claude propone).
