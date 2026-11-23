@@ -1,0 +1,213 @@
+{
+  "cards": [
+    {
+      "id": "chigui",
+      "name": "Chigüi",
+      "element": "agua",
+      "sides": [4, 3, 3, 4, 3, 3],
+      "effect": "manada",
+      "region": "Llanos Orientales",
+      "quote": "Nada lo estresa. Con amigos, menos.",
+      "whyEffect": "Siempre anda en grupo: Manada.",
+      "inspiredBy": "el chigüiro de los Llanos"
+    },
+    {
+      "id": "doradita",
+      "name": "Doradita",
+      "element": "monte",
+      "sides": [3, 3, 3, 3, 3, 3],
+      "effect": "espinas",
+      "region": "Chocó",
+      "quote": "Pequeñita, brillante y mejor no tocarla.",
+      "whyEffect": "Su piel castiga a quien la atrapa: Espinas.",
+      "inspiredBy": "la rana dorada del Chocó"
+    },
+    {
+      "id": "guaca",
+      "name": "Guaca",
+      "element": "fuego",
+      "sides": [5, 4, 3, 2, 3, 4],
+      "effect": "embestida",
+      "region": "Toda Colombia",
+      "quote": "Grita antes de llegar y llega de frente.",
+      "whyEffect": "Se lanza sin pensarlo: Embestida.",
+      "inspiredBy": "la guacamaya bandera"
+    },
+    {
+      "id": "titin",
+      "name": "Titín",
+      "element": "errante",
+      "sides": [3, 3, 3, 3, 3, 3],
+      "effect": "manada",
+      "region": "Costa Caribe",
+      "quote": "Imita todo lo que ve, sobre todo lo que no debe.",
+      "whyEffect": "Imita a los que tiene al lado y se crece con ellos: Manada.",
+      "inspiredBy": "el tití cabeciblanco"
+    },
+    {
+      "id": "anteojitos",
+      "name": "Anteojitos",
+      "element": "monte",
+      "sides": [5, 5, 4, 5, 4, 4],
+      "effect": "guardian",
+      "region": "Andes colombianos",
+      "quote": "Grande, tranquilo y siempre delante de los suyos.",
+      "whyEffect": "Cubre a los demás: Guardián.",
+      "inspiredBy": "el oso de anteojos"
+    },
+    {
+      "id": "frailin",
+      "name": "Frailín",
+      "element": "monte",
+      "sides": [4, 4, 4, 4, 4, 4],
+      "effect": "siembra",
+      "region": "Páramos andinos",
+      "quote": "Guarda el agua del páramo para todos.",
+      "whyEffect": "Donde se planta, el monte crece: Siembra.",
+      "inspiredBy": "el frailejón del páramo"
+    },
+    {
+      "id": "rosadito",
+      "name": "Rosadito",
+      "element": "agua",
+      "sides": [5, 5, 5, 4, 5, 5],
+      "effect": "firme",
+      "region": "Amazonas",
+      "quote": "Juega en el río y nunca se deja atrapar.",
+      "whyEffect": "Escurridizo como el agua: Firme.",
+      "inspiredBy": "el delfín rosado del Amazonas"
+    },
+    {
+      "id": "zumbi",
+      "name": "Zumbi",
+      "element": "fuego",
+      "sides": [6, 4, 3, 5, 3, 4],
+      "effect": "giro",
+      "region": "Toda Colombia",
+      "quote": "Va y viene tan rápido que nadie sabe de dónde llegó.",
+      "whyEffect": "Cambia de dirección en el aire: Giro.",
+      "inspiredBy": "el colibrí"
+    },
+    {
+      "id": "lloraluz",
+      "name": "Lloraluz",
+      "element": "agua",
+      "sides": [6, 5, 5, 5, 5, 6],
+      "effect": "reclamo",
+      "region": "Ríos de Colombia",
+      "quote": "Recorre los ríos de neón buscando lo que perdió.",
+      "whyEffect": "Busca recuperar a los suyos: Reclamo.",
+      "inspiredBy": "La Llorona"
+    },
+    {
+      "id": "caimanero",
+      "name": "Caimanero",
+      "element": "agua",
+      "sides": [6, 5, 4, 5, 4, 5],
+      "effect": "sello",
+      "region": "Río Magdalena",
+      "quote": "Mitad hombre, mitad caimán, dueño de la orilla.",
+      "whyEffect": "Dueño de la orilla, nadie entra: Sello.",
+      "inspiredBy": "El Hombre Caimán"
+    },
+    {
+      "id": "farolero",
+      "name": "Farolero",
+      "element": "fuego",
+      "sides": [6, 5, 5, 5, 5, 5],
+      "effect": "sello",
+      "region": "Pacífico",
+      "quote": "Una luz en una canoa: donde ronda, nadie se acerca.",
+      "whyEffect": "Nadie entra a donde alumbra: Sello.",
+      "inspiredBy": "El Riviel"
+    },
+    {
+      "id": "patasombra",
+      "name": "Patasombra",
+      "element": "monte",
+      "sides": [7, 5, 5, 4, 5, 6],
+      "effect": "espinas",
+      "region": "Andes colombianos",
+      "quote": "Una sola pierna y mil formas de engañar al cazador.",
+      "whyEffect": "Quien la atrapa sale debilitado: Espinas.",
+      "inspiredBy": "La Patasola"
+    },
+    {
+      "id": "silbo",
+      "name": "Silbo",
+      "element": "errante",
+      "sides": [8, 5, 3, 6, 3, 5],
+      "effect": "giro",
+      "region": "Llanos Orientales",
+      "quote": "Si lo oyes cerca, está lejos.",
+      "whyEffect": "Nunca está donde crees: Giro.",
+      "inspiredBy": "El Silbón"
+    },
+    {
+      "id": "ala-ancha",
+      "name": "Ala Ancha",
+      "element": "errante",
+      "sides": [6, 5, 5, 4, 5, 6],
+      "effect": "manada",
+      "region": "Antioquia",
+      "quote": "Llega a caballo, con su sombrero y su jauría.",
+      "whyEffect": "Más fuerte con sus perros: Manada.",
+      "inspiredBy": "El Sombrerón"
+    },
+    {
+      "id": "rioman",
+      "name": "Riomán",
+      "element": "agua",
+      "sides": [7, 6, 5, 5, 5, 6],
+      "effect": "siembra",
+      "region": "Tolima y Huila",
+      "quote": "Señor del río; donde pasa, el agua obedece.",
+      "whyEffect": "Hace suyo el río a su alrededor: Siembra de Agua.",
+      "inspiredBy": "El Mohán"
+    },
+    {
+      "id": "musgamadre",
+      "name": "Musgamadre",
+      "element": "monte",
+      "sides": [7, 7, 6, 5, 6, 6],
+      "effect": "espinas",
+      "region": "Antioquia y Caldas",
+      "quote": "Castiga a quien daña el monte.",
+      "whyEffect": "Quien la toca, paga: Espinas.",
+      "inspiredBy": "La Madremonte"
+    },
+    {
+      "id": "trapichero",
+      "name": "Trapichero",
+      "element": "fuego",
+      "sides": [8, 7, 5, 4, 5, 7],
+      "effect": "embestida",
+      "region": "Valles de caña",
+      "quote": "Nació en la caldera de un trapiche abandonado.",
+      "whyEffect": "Arranca a todo vapor: Embestida.",
+      "inspiredBy": "personaje original"
+    },
+    {
+      "id": "candela",
+      "name": "Candela",
+      "element": "fuego",
+      "sides": [9, 7, 6, 4, 6, 7],
+      "effect": "cadena",
+      "region": "Llanos Orientales",
+      "quote": "Una llamarada que salta de culpa en culpa por el llano.",
+      "whyEffect": "El fuego pasa de una víctima a la siguiente: Cadena.",
+      "inspiredBy": "La Candileja"
+    },
+    {
+      "id": "mil-caras",
+      "name": "Mil Caras",
+      "element": "errante",
+      "sides": [8, 7, 6, 5, 6, 7],
+      "effect": "reclamo",
+      "region": "Pacífico",
+      "quote": "Puede ser cualquiera que conozcas.",
+      "whyEffect": "Se hace pasar por uno de los tuyos y se lo lleva de vuelta: Reclamo.",
+      "inspiredBy": "las leyendas de cambiaformas"
+    }
+  ]
+}

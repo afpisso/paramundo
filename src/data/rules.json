@@ -1,0 +1,19 @@
+{
+  "handSize": 6,
+  "deck": { "size": 12, "maxCopies": null },
+  "sides": { "min": 1, "max": 10 },
+  "sideCost": { "7": 8, "8": 10, "9": 12, "10": 15 },
+  "tiers": [
+    { "id": "comun", "minPower": 0 },
+    { "id": "poco_comun", "minPower": 27 },
+    { "id": "rara", "minPower": 33 },
+    { "id": "epica", "minPower": 39 },
+    { "id": "legendaria", "minPower": 46 }
+  ],
+  "elements": {
+    "beats": { "fuego": "monte", "monte": "agua", "agua": "fuego" },
+    "advantage": 1,
+    "disadvantage": -1
+  },
+  "zones": { "match": 1, "weak": -1 }
+}
